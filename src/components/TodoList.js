@@ -5,12 +5,16 @@ import Todo from './Todo'
 
 function TodoList(props) {
     // console.log(props.todoData)
+    const clearOnSubmit = event => {
+        event.preventDefault()
+        props.removeCompleted(event.target.name)
+    }
     return (
         <div>
           {props.todoData.map(item => (
               <Todo item={item} key={item.id} toggleItem={props.toggleItem} />
           ))}
-          <button>Clear Completed</button>
+          <button onClick={clearOnSubmit}>Clear Completed</button>
         </div>
     )
 } 

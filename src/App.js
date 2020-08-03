@@ -5,9 +5,9 @@ import TodoList from './components/TodoList'
 
  const todoData = [
    {
-     name: '',
+     name: 'take a nap',
      completed: false,
-     id: new Date(),
+     id: 1528817077286,
 
    },
  ]
@@ -42,18 +42,23 @@ class App extends React.Component {
 
   addItem = (itemName) => {
     const newItem = {
-      name: itemName
+      name: itemName,
+      completed: false,
+      id: Date.now()
     }
     this.setState({todoData: [...this.state.todoData, newItem]})
   }
 
+  removeCompleted = (itemName) => {
+    this.setState({todoData: [this.state.todoData.filter(item => item !==itemName)]})
+  }
   
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
         <TodoForm  addItem={this.addItem} />
-        <TodoList todoData={this.state.todoData} toggleItem={this.toggleItem}/>
+        <TodoList todoData={this.state.todoData} toggleItem={this.toggleItem} removeCompleted={this.removeCompleted}/>
       </div>
     );
   }
