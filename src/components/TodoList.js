@@ -5,9 +5,8 @@ import Todo from './Todo'
 
 function TodoList(props) {
     // console.log(props.todoData)
-    const clearOnSubmit = event => {
-        event.preventDefault()
-        props.removeCompleted(event.target.completed)
+    const clearOnSubmit = () => {
+        props.removeCompleted()
     }
     return (
         <div>

@@ -49,8 +49,8 @@ class App extends React.Component {
     this.setState({todoData: [...this.state.todoData, newItem]})
   }
 
-  removeCompleted = (itemStatus) => {
-    this.setState({todoData: [this.state.todoData.filter(item => item.completed !==itemStatus)]})
+  removeCompleted = () => {
+    this.setState({todoData: this.state.todoData.filter(item => !item.completed )})
   }
   
   render() {
