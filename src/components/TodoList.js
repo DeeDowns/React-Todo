@@ -8,8 +8,9 @@ function TodoList(props) {
     return (
         <div>
           {props.todoData.map(item => (
-              <Todo item={item} key={item.id} />
+              <Todo item={item} key={item.id} toggleItem={props.toggleItem} />
           ))}
+          <button>Clear Completed</button>
         </div>
     )
 } 

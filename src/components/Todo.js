@@ -1,9 +1,10 @@
 import React from 'react'
 
+
 function Todo(props) {
     // console.log(props)
     return (
-        <div>
+        <div onClick={() => props.toggleItem(props.item.name)} className={`item${props.item.completed ? 'completed' : ''}`}>
             <h4>{props.item.name}</h4>
         </div>
     )
