@@ -1,10 +1,10 @@
 import React from 'react'
 
 function Todo(props) {
-    const {todoItem } = props
+    // console.log(props)
     return (
         <div>
-            <p>{todoItem}</p>
+            <h4>{props.item.name}</h4>
         </div>
     )
 }
