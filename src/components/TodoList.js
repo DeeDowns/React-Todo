@@ -7,7 +7,7 @@ function TodoList(props) {
     // console.log(props.todoData)
     const clearOnSubmit = event => {
         event.preventDefault()
-        props.removeCompleted(event.target.name)
+        props.removeCompleted(event.target.completed)
     }
     return (
         <div>
