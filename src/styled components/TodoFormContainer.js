@@ -6,7 +6,7 @@ const TodoFormContainer = styled.form `
     justify-content: center;
     align-items: center;
     width: 50%;
-    border: 3px solid grey;
+   
 
     .input-container {
         margin: 3%;

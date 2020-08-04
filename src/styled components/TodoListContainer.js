@@ -5,9 +5,14 @@ const TodoListContainer = styled.div `
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 60%;
     margin: 3%;
-    border: 3px solid grey;
+   
+
+    h3 {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.8rem;
+    }
 
     .button-container {
         margin: 3%;

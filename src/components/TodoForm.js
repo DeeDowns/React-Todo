@@ -25,7 +25,14 @@ class TodoForm extends React.Component  {
         return (
             <TodoFormContainer onSubmit={this.handleSubmit}>
                 <div className='input-container'>
-                    <TextField variant='outlined' placeholder='to-do' type='text' name='inputText' value={this.state.inputText} onChange={this.handleChanges} />
+                    <TextField 
+                    variant='outlined' 
+                    type='text' 
+                    name='inputText' 
+                    value={this.state.inputText} 
+                    onChange={this.handleChanges}
+                    label='Add To-Do Item' 
+                   />
                 </div>
                 <div className='button-container'>
                     <Button onClick={this.handleSubmit} variant='contained' color='primary'>Add to List</Button>

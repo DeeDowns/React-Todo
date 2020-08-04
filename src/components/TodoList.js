@@ -12,6 +12,7 @@ function TodoList(props) {
     }
     return (
         <TodoListContainer>
+          <h3>Click on item to mark complete.</h3>
           {props.todoData.map(item => (
               <Todo item={item} key={item.id} toggleItem={props.toggleItem} />
           ))}
