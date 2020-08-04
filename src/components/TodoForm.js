@@ -1,4 +1,6 @@
 import React from 'react'
+import { TextField, Button }from '@material-ui/core'
+import TodoFormContainer from '../styled components/TodoFormContainer'
 
 class TodoForm extends React.Component  {
     constructor() {
@@ -21,10 +23,14 @@ class TodoForm extends React.Component  {
    }
    render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <input type='text' name='inputText' value={this.state.inputText} onChange={this.handleChanges} />
-                <button>Add to List</button>
-            </form>
+            <TodoFormContainer onSubmit={this.handleSubmit}>
+                <div className='input-container'>
+                    <TextField variant='outlined' placeholder='to-do' type='text' name='inputText' value={this.state.inputText} onChange={this.handleChanges} />
+                </div>
+                <div className='button-container'>
+                    <Button onClick={this.handleSubmit} variant='contained' color='primary'>Add to List</Button>
+                </div>
+            </TodoFormContainer>
         )
     }
 }

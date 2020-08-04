@@ -1,14 +1,19 @@
 import React from 'react';
 import TodoForm from './components/TodoForm'
 import TodoList from './components/TodoList'
+import AppContainer from './styled components/AppContainer'
 
 
  const todoData = [
+  {
+    name: 'world domination',
+    completed: false,
+    id: 1528817084358,
+  },
    {
      name: 'take a nap',
      completed: false,
      id: 1528817077286,
-
    },
  ]
 
@@ -50,16 +55,18 @@ class App extends React.Component {
   }
 
   removeCompleted = () => {
-    this.setState({todoData: this.state.todoData.filter(item => !item.completed )})
+    this.setState(
+      {todoData: this.state.todoData.filter(item => !item.completed )}
+    )
   }
   
   render() {
     return (
-      <div>
-        <h2>Welcome to your Todo App!</h2>
+      <AppContainer>
+        <h2>Todo App</h2>
         <TodoForm  addItem={this.addItem} />
         <TodoList todoData={this.state.todoData} toggleItem={this.toggleItem} removeCompleted={this.removeCompleted}/>
-      </div>
+      </AppContainer>
     );
   }
 }
